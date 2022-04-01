@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+<!-- open main -->
+<main class="main movie-main container" id="main">
+    <h2 class="movie-header text-center">Welcome to the list of movies!</h2>
+    <div class="row">
+        <% data.forEach(item => { %>
+            <div class="col-md-3">
+                <div class="movie-div">
+                    <h3 class="title-header text-center"><a href="/movie/<%= item.movie_id %>"><%= item.title %></a></h3>
+                    <ul class="list-group">
+                        <li class="list-group-item text-center"><%= item.year %></li>
+                        <li class="list-group-item text-center"><%= item.rating %></li>
+                    </ul>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>
+<!-- close main -->
+<%- include('../partials/footer'); %>
